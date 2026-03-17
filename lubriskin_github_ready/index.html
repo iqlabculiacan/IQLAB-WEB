@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lubriskin | Cuidado corporal diario</title>
+  <meta name="description" content="Lubriskin: hidratación corporal diaria con una estética premium, cálida y confiable, respaldada por laboratorio." />
+  <style>
+    :root{
+      --bg:#f7f3ee; --bg2:#fcfaf7; --card:#fff; --line:#e9e0d7; --text:#3d342d; --muted:#7b6d61;
+      --shadow:0 18px 60px rgba(70,49,36,.10); --radius:28px; --max:1200px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);
+      background:linear-gradient(180deg,#f8f4ef 0%,#fcfaf7 35%,#f4eee8 100%); line-height:1.5}
+    img{max-width:100%;display:block} a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .hero{position:relative;min-height:100svh;overflow:hidden;color:#fff;background:#2e2722}
+    .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero::after{content:"";position:absolute;inset:0;background:
+      linear-gradient(180deg,rgba(32,24,18,.50) 0%,rgba(32,24,18,.58) 48%,rgba(32,24,18,.72) 100%),
+      radial-gradient(circle at top left,rgba(212,188,160,.22),transparent 28%),
+      radial-gradient(circle at bottom right,rgba(187,210,198,.20),transparent 25%)}
+    .hero-inner{position:relative;z-index:2;min-height:100svh;display:flex;align-items:center;padding:48px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .badge{display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border-radius:999px;background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.24);backdrop-filter:blur(12px);font-size:14px;font-weight:600;margin-bottom:18px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#ead0ac}
+    h1{margin:0;font-size:clamp(40px,7vw,72px);line-height:1.02;letter-spacing:-.03em;max-width:850px}
+    .lead{margin:20px 0 0;max-width:720px;font-size:clamp(18px,2vw,21px);line-height:1.75;color:rgba(255,255,255,.86)}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;border-radius:18px;font-weight:700;font-size:15px;transition:.2s ease;border:1px solid transparent}
+    .btn-primary{background:#fff;color:#2e2722}.btn-secondary{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.24);backdrop-filter:blur(10px)}
+    .btn:hover{transform:translateY(-1px)}
+    .hero-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:32px;padding:24px;backdrop-filter:blur(14px);box-shadow:0 18px 60px rgba(0,0,0,.12)}
+    .hero-card img{border-radius:24px;background:rgba(255,255,255,.92);padding:18px;box-shadow:inset 0 0 0 1px rgba(70,49,36,.06)}
+    .hero-card-copy{margin-top:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:18px;color:rgba(255,255,255,.92)}
+    .section{padding:88px 0}.eyebrow{display:inline-block;margin-bottom:10px;text-transform:uppercase;letter-spacing:.22em;font-size:12px;font-weight:800;color:#8d7d6e}
+    h2{margin:0;font-size:clamp(30px,5vw,48px);line-height:1.05;letter-spacing:-.03em}
+    .section-copy{margin-top:14px;max-width:760px;font-size:18px;color:var(--muted);line-height:1.85}
+    .three,.products,.benefits{display:grid;gap:20px;margin-top:30px}
+    .three{grid-template-columns:repeat(3,1fr)} .products{grid-template-columns:repeat(3,1fr);gap:22px} .benefits{grid-template-columns:1fr 1fr;gap:14px}
+    .card,.product,.mood,.editorial-box,.benefit{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
+    .card,.editorial-box{padding:24px}
+    .icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#f2e8dc;color:#7f684e;font-size:20px;margin-bottom:14px}
+    .card h3,.product-body h3{margin:0}.card p,.product-body p{margin:10px 0 0;color:var(--muted);line-height:1.8}
+    .split,.editorial-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+    .mood{overflow:hidden;padding:18px}.mood img{border-radius:22px}
+    .product{overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}.product:hover{transform:translateY(-2px);box-shadow:0 22px 70px rgba(70,49,36,.13)}
+    .product-media{background:linear-gradient(180deg,#f0e8de 0%,#fbf8f4 100%);padding:18px}.product-media img{aspect-ratio:1/1;object-fit:contain;border-radius:24px;background:#fff;padding:16px}
+    .product-body{padding:20px 22px 24px}.pill{margin-top:16px;display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;font-size:13px;font-weight:700;background:#f6f1ea;color:#6e5e50;border:1px solid #eadfce}
+    .benefit{display:flex;gap:12px;align-items:flex-start;padding:16px 18px}
+    .benefit .icon{width:38px;height:38px;margin:0;border-radius:12px}
+    .dark{background:#2f2823;color:#fff;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+    .dark .eyebrow{color:#cfc2b2}.dark .section-copy{color:rgba(255,255,255,.80)}
+    .dark-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:24px;padding:20px}
+    .footer{padding:36px 0 50px;color:#7d7065;font-size:14px}.footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+    @media (max-width:1024px){.hero-grid,.split,.editorial-grid,.three,.products,.benefits{grid-template-columns:1fr}}
+    @media (max-width:640px){.section{padding:66px 0}.hero-card{padding:16px}.btn{width:100%}.hero-actions{display:grid;grid-template-columns:1fr}.container{width:min(var(--max),calc(100% - 20px))}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <video autoplay muted loop playsinline poster="assets/piel_normal.jpg">
+      <source src="assets/lubriskin-bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-inner">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge"><span class="dot"></span> Cuidado corporal diario con respaldo real</div>
+          <h1>Lubriskin cuida tu piel con una presencia más premium, cálida y confiable.</h1>
+          <p class="lead">
+            Una landing page basada en la identidad visual del manual de Lubriskin: cercana, limpia, luminosa y funcional.
+            Con fotos reales de tus cremas, video de fondo y una estética editorial pensada para verse profesional desde el primer vistazo.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#productos">Ver productos</a>
+            <a class="btn btn-secondary" href="#respaldo">Ver respaldo</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="assets/manual_mood.jpg" alt="Moodboard visual Lubriskin" onerror="this.src='assets/piel_normal.jpg'">
+          <div class="hero-card-copy">
+            <strong style="display:block;font-size:20px;margin-bottom:8px;">Dirección visual del manual</strong>
+            Neutros cálidos, sensación limpia, suavidad, piel real y una comunicación clara que transmite confianza cotidiana.
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Esencia de marca</span>
+      <h2>Una web limpia y comercial, pero guiada por la identidad de Lubriskin.</h2>
+      <p class="section-copy">
+        Esta propuesta está pensada para verse profesional y vendible, pero manteniendo el tono del manual:
+        hidratación diaria, cercanía, claridad, confianza y una estética suave que acompaña la rutina real de las personas.
+      </p>
+      <div class="three">
+        <article class="card"><div class="icon">✦</div><h3>Hidratación diaria</h3><p>Mensajes simples, cómodos y funcionales para integrar Lubriskin a la rutina cotidiana.</p></article>
+        <article class="card"><div class="icon" style="background:#e4efe8;color:#567668;">◎</div><h3>Textura agradable</h3><p>Visuales más suaves y elegantes que transmiten sensorialidad, limpieza y bienestar.</p></article>
+        <article class="card"><div class="icon" style="background:#efe6f6;color:#7c688f;">✓</div><h3>Respaldo real</h3><p>Comunicación reforzada con el respaldo del laboratorio, COFEPRIS e ISO 9001.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container editorial-grid">
+      <div class="mood"><img src="assets/manual_mood.jpg" alt="Manual visual Lubriskin" onerror="this.src='assets/piel_seca.jpg'"></div>
+      <div style="display:grid;gap:18px">
+        <div class="editorial-box">
+          <span class="eyebrow">Basado en tu manual</span>
+          <h3 style="margin:0;font-size:30px;">Una estética editorial cálida y funcional</h3>
+          <p style="margin:12px 0 0;color:var(--muted);line-height:1.85;">La página retoma el mood del manual: tonos oat cream, acentos suaves, piel luminosa, fondos limpios y una experiencia visual cuidada sin perder claridad comercial.</p>
+        </div>
+        <div class="editorial-box">
+          <span class="eyebrow">Referencia visual</span>
+          <p style="margin:0;color:var(--muted);line-height:1.85;">La estructura se siente moderna y vendible, con un look de dermocosmética limpia, pero la identidad, paleta y tono siguen siendo Lubriskin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="productos">
+    <div class="container">
+      <span class="eyebrow">Línea de productos</span>
+      <h2>Fotos reales de tus cremas integradas en una presentación más profesional.</h2>
+      <p class="section-copy">Cada variante aparece sobre fondos limpios y cálidos para que la página se sienta más pulida, clara y lista para presentarse al público.</p>
+      <div class="products">
+        <article class="product"><div class="product-media"><img src="assets/piel_normal.jpg" alt="Lubriskin Piel Normal"></div><div class="product-body"><h3>Piel Normal</h3><p>Hidratación diaria de textura ligera para una rutina cómoda, práctica y constante.</p><div class="pill">Uso diario</div></div></article>
+        <article class="product"><div class="product-media"><img src="assets/piel_seca.jpg" alt="Lubriskin Piel Seca"></div><div class="product-body"><h3>Piel Seca</h3><p>Cuidado corporal que ayuda a mantener la suavidad y combatir el resecamiento cotidiano.</p><div class="pill">Mayor confort</div></div></article>
+        <article class="product"><div class="product-media"><img src="assets/intensiva.jpg" alt="Lubriskin Intensiva"></div><div class="product-body"><h3>Intensiva</h3><p>Una experiencia más envolvente para piel que necesita una sensación extra de nutrición y confort.</p><div class="pill">Nutrición diaria</div></div></article>
+        <article class="product"><div class="product-media"><img src="assets/fps20.jpg" alt="Lubriskin FPS 20"></div><div class="product-body"><h3>FPS 20</h3><p>Protección diaria para piel sensible con una presentación clara, funcional y confiable.</p><div class="pill">Piel sensible</div></div></article>
+        <article class="product"><div class="product-media"><img src="assets/fps45.jpg" alt="Lubriskin FPS 45"></div><div class="product-body"><h3>FPS 45</h3><p>Gel hidratante protector solar de ultra absorción para una rutina diaria más ligera.</p><div class="pill">Ultra absorción</div></div></article>
+        <article class="product"><div class="product-media"><img src="assets/reparacion_fps35.jpg" alt="Lubriskin Reparación FPS 35"></div><div class="product-body"><h3>Reparación FPS 35</h3><p>Cuidado intensivo con enfoque en tono, elasticidad y sensación de piel renovada.</p><div class="pill">Facial y corporal</div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:linear-gradient(180deg,#fcfaf7 0%,#f2ebe4 100%);">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Beneficios de marca</span>
+        <h2>Una experiencia más refinada sin perder cercanía ni claridad.</h2>
+        <div class="benefits">
+          <div class="benefit"><div class="icon">✦</div><div><strong>Suavidad visible</strong><div style="color:var(--muted);margin-top:6px;">Visuales limpios que comunican cuidado real.</div></div></div>
+          <div class="benefit"><div class="icon" style="background:#e4efe8;color:#567668;">◎</div><div><strong>Rutina simple</strong><div style="color:var(--muted);margin-top:6px;">Mensajes claros para compra rápida y confianza.</div></div></div>
+          <div class="benefit"><div class="icon" style="background:#efe6f6;color:#7c688f;">✓</div><div><strong>Texturas agradables</strong><div style="color:var(--muted);margin-top:6px;">Sensación visual de limpieza, confort y bienestar.</div></div></div>
+          <div class="benefit"><div class="icon">✚</div><div><strong>Compra confiable</strong><div style="color:var(--muted);margin-top:6px;">Diseño pensado para verse serio, profesional y vendible.</div></div></div>
+        </div>
+      </div>
+      <div class="mood"><img src="assets/manual_mood.jpg" alt="Inspiración visual Lubriskin" onerror="this.src='assets/intensiva.jpg'"></div>
+    </div>
+  </section>
+
+  <section class="section dark" id="respaldo">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Respaldo del laboratorio</span>
+        <h2>La credibilidad también forma parte de la experiencia premium.</h2>
+        <p class="section-copy">Lubriskin está respaldada por nuestro laboratorio, con licencia sanitaria ante COFEPRIS y procesos bajo ISO 9001. Esto fortalece la percepción de una marca seria, consistente y confiable para el cuidado corporal diario.</p>
+      </div>
+      <div style="display:grid;gap:14px">
+        <div class="dark-card"><strong style="font-size:22px;display:block;margin-bottom:6px;">Licencia sanitaria ante COFEPRIS</strong><span style="color:rgba(255,255,255,.78)">Cumplimiento y confianza desde origen.</span></div>
+        <div class="dark-card"><strong style="font-size:22px;display:block;margin-bottom:6px;">Procesos bajo ISO 9001</strong><span style="color:rgba(255,255,255,.78)">Orden, consistencia y enfoque en calidad.</span></div>
+        <div class="dark-card"><strong style="font-size:22px;display:block;margin-bottom:6px;">Marca cálida y experta</strong><span style="color:rgba(255,255,255,.78)">Una comunicación cercana con respaldo real.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>Lubriskin</strong> · Cuidado corporal diario</div>
+      <div>Archivo listo para GitHub y Vercel</div>
+    </div>
+  </footer>
+</body>
+</html>
