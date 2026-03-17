@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lubriskin | Cuidado corporal diario</title>
+  <meta name="description" content="Lubriskin: hidratación corporal diaria con respaldo de laboratorio, licencia sanitaria ante COFEPRIS y procesos bajo ISO 9001." />
+  <style>
+    :root {
+      --bg: #f7f3ee;
+      --paper: #fffdf9;
+      --card: #ffffff;
+      --text: #2f2924;
+      --muted: #72665b;
+      --line: #e6ddd3;
+      --accent: #b89b72;
+      --accent-soft: #efe5d8;
+      --dark: #1f1a16;
+      --shadow: 0 16px 45px rgba(63,41,24,0.08);
+      --radius: 28px;
+      --container: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--container), calc(100% - 32px)); margin: 0 auto; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top left, rgba(220,197,171,.35), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(176,198,188,.35), transparent 28%),
+        linear-gradient(135deg, #f8f4ef 0%, #fcfaf7 45%, #f4efe8 100%);
+    }
+    .hero-grid, .two-col { display: grid; gap: 32px; }
+    .hero-grid { grid-template-columns: 1.05fr .95fr; align-items: center; padding: 72px 0; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 16px; border: 1px solid #d8cec2; background: rgba(255,255,255,.8);
+      border-radius: 999px; font-size: 14px; color: #544b43;
+      backdrop-filter: blur(8px);
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    h1,h2,h3 { margin: 0; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.05; max-width: 11ch; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; }
+    .lead { font-size: 1.1rem; color: var(--muted); max-width: 620px; margin-top: 22px; line-height: 1.85; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn { padding: 14px 22px; border-radius: 18px; font-weight: 700; font-size: 14px; border: 1px solid transparent; }
+    .btn-dark { background: var(--dark); color: white; box-shadow: 0 14px 30px rgba(31,26,22,.18); }
+    .btn-light { background: rgba(255,255,255,.88); border-color: #d8cec2; }
+    .mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 34px; max-width: 720px; }
+    .mini-card, .card, .soft-card, .panel { border-radius: 24px; }
+    .mini-card { background: rgba(255,255,255,.85); border: 1px solid var(--line); padding: 16px; box-shadow: 0 8px 20px rgba(63,41,24,0.04); font-size: 14px; }
+    .mini-card b { display: block; margin-top: 6px; font-size: 15px; color: var(--text); }
+    .hero-card { background: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.8); border-radius: 34px; padding: 24px; box-shadow: 0 20px 70px rgba(63,41,24,.10); backdrop-filter: blur(16px); }
+    .hero-inner { display: grid; gap: 18px; grid-template-columns: .95fr 1.05fr; }
+    .image-shell { background: linear-gradient(180deg,#efe7dd 0%, #f7f3ed 100%); padding: 18px; border-radius: 28px; box-shadow: inset 0 1px 0 rgba(255,255,255,.7); }
+    .image-frame { overflow: hidden; min-height: 320px; border-radius: 24px; background: rgba(255,255,255,.8); }
+    .image-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .copy-shell { background: #fcfaf7; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+    .eyebrow { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: #8a7d71; font-weight: 700; }
+    .copy-shell p, .section-copy { color: var(--muted); line-height: 1.85; }
+    section.block { padding: 72px 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .grid-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+    .card { background: rgba(255,255,255,.9); border: 1px solid var(--line); padding: 28px; box-shadow: 0 12px 40px rgba(63,41,24,.06); }
+    .card p { color: var(--muted); line-height: 1.85; }
+    .section-top { display: flex; justify-content: space-between; gap: 20px; align-items: end; }
+    .section-label { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: #8a7d71; font-weight: 700; margin-bottom: 12px; }
+    .hint { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 12px 16px; color: var(--muted); box-shadow: 0 8px 18px rgba(63,41,24,.04); font-size: 14px; }
+    .product-card { overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 30px; box-shadow: var(--shadow); }
+    .product-media { aspect-ratio: 4 / 5; padding: 18px; background: linear-gradient(180deg,#efe7dd 0%, #f8f4ef 100%); }
+    .product-media .inner { height: 100%; overflow: hidden; background: rgba(255,255,255,.86); border-radius: 24px; }
+    .product-media img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+    .product-body { padding: 24px; }
+    .product-body p { color: var(--muted); line-height: 1.8; font-size: 14px; }
+    .tagline { display: flex; align-items: center; gap: 8px; margin-top: 16px; color: #5d534a; font-size: 14px; font-weight: 700; }
+    .check { width: 18px; height: 18px; border-radius: 50%; background: #e8dcc9; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+    .feature-zone {
+      background: linear-gradient(180deg,#fcfaf7 0%, #f3ede6 100%);
+      padding: 72px 0;
+    }
+    .benefit-list { display: grid; gap: 14px; margin-top: 26px; }
+    .benefit { display: flex; gap: 12px; padding: 16px; background: rgba(255,255,255,.88); border-radius: 22px; box-shadow: 0 10px 20px rgba(63,41,24,.05); }
+    .icon-round { width: 34px; height: 34px; border-radius: 50%; background: #d8c1a4; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+    .feature-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .soft-card { background: rgba(255,255,255,.92); border: 1px solid var(--line); padding: 24px; box-shadow: 0 8px 18px rgba(63,41,24,.04); }
+    .soft-card.full { grid-column: 1 / -1; }
+    .dark-panel { background: #1f1a16; color: white; border-radius: 34px; padding: 38px; box-shadow: 0 28px 70px rgba(34,24,18,.22); }
+    .dark-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 36px; align-items: center; }
+    .dark-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 24px; padding: 22px; }
+    .dark-card small, .dark-panel p { color: #d4ccc3; }
+    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    footer { padding: 32px 0 48px; color: #8a7d71; font-size: 14px; }
+    @media (max-width: 980px) {
+      .hero-grid, .two-col, .dark-grid, .cta-grid, .hero-inner, .grid-3, .grid-products, .feature-cards { grid-template-columns: 1fr; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .section-top { flex-direction: column; align-items: start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge"><span class="dot"></span>Hidratación corporal diaria con una estética más premium</div>
+        <h1>Lubriskin: cuidado corporal cotidiano con una presencia elegante, cálida y confiable.</h1>
+        <p class="lead">Una marca que acompaña la rutina diaria con hidratación constante, textura agradable y una experiencia visual más refinada, sin dejar de sentirse cercana, honesta y funcional.</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="#productos">Explorar línea</a>
+          <a class="btn btn-light" href="#texturas">Ver experiencia visual</a>
+        </div>
+        <div class="mini-grid">
+          <div class="mini-card">Enfoque<b>Hidratación diaria</b></div>
+          <div class="mini-card">Personalidad<b>Cálida y experta</b></div>
+          <div class="mini-card">Respaldo<b>COFEPRIS + ISO 9001</b></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-inner">
+          <div class="image-shell">
+            <div class="image-frame"><img src="assets/manual-moodboard.jpg" alt="Moodboard visual Lubriskin"></div>
+          </div>
+          <div class="copy-shell">
+            <div>
+              <div class="eyebrow">Luxury everyday care</div>
+              <h3 style="font-size:2rem; margin-top:12px;">La crema que se siente cercana, pero se ve impecable.</h3>
+              <p>Pensada para personas que buscan confianza, suavidad y una decisión de compra clara, sin complicaciones ni promesas exageradas.</p>
+            </div>
+            <div class="soft-card" style="padding:20px;">
+              <div style="font-size:14px; color:#8a7d71;">Dirección visual</div>
+              <div style="margin-top:8px; font-weight:700; line-height:1.7;">Neutros cálidos, acentos suaves, piel real, texturas cremosas y una sensación limpia y cuidada.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="container grid-3">
+      <div class="card"><div class="section-label">Sensorialidad limpia</div><p>Visuales luminosos, tonos cálidos y un lenguaje cuidado para transmitir suavidad, calma y confianza.</p></div>
+      <div class="card"><div class="section-label">Rutina simple</div><p>Lubriskin acompaña el cuidado diario con mensajes claros y una estética elegante y cercana.</p></div>
+      <div class="card"><div class="section-label">Marca experta</div><p>Habla como alguien que sabe de piel, pero no presume. Educa, acompaña y da seguridad.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="texturas" style="background:rgba(255,255,255,.74);">
+    <div class="container">
+      <div style="max-width:760px;">
+        <div class="section-label">Experiencia visual</div>
+        <h2>Una página premium también se construye con fotos que transmiten textura, suavidad y confianza.</h2>
+        <p class="section-copy">Agregué una sección especial para que la página incluya imágenes como las del manual: crema extendida, acercamientos sensoriales y escenas limpias de rutina diaria.</p>
+      </div>
+      <div class="grid-products" style="margin-top:34px;">
+        <article class="product-card">
+          <div class="product-media"><div class="inner"><img src="assets/manual-texture-arm.jpg" alt="Textura y aplicación"></div></div>
+          <div class="product-body"><h3>Textura y aplicación</h3><p>Piel real · crema extendida · experiencia premium</p></div>
+        </article>
+        <article class="product-card">
+          <div class="product-media"><div class="inner"><img src="assets/manual-moodboard.jpg" alt="Moodboard"></div></div>
+          <div class="product-body"><h3>Moodboard de marca</h3><p>Luz suave · producto · piel · rutina diaria</p></div>
+        </article>
+        <article class="product-card">
+          <div class="product-media"><div class="inner"><img src="assets/manual-collage-dryskin.jpg" alt="Collage lifestyle"></div></div>
+          <div class="product-body"><h3>Collage lifestyle</h3><p>Textura · cuidado diario · look premium</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="productos">
+    <div class="container">
+      <div class="section-top">
+        <div style="max-width:760px;">
+          <div class="section-label">Línea de productos</div>
+          <h2>Distintas variantes, una misma idea: cuidado diario con presencia premium y confianza real.</h2>
+        </div>
+        <div class="hint">Ya integré tus fotos reales de producto.</div>
+      </div>
+      <div class="grid-products">
+        <article class="product-card"><div class="product-media"><div class="inner"><img src="assets/piel-normal.jpg" alt="Piel Normal"></div></div><div class="product-body"><h3>Piel Normal</h3><p>Hidratación diaria de textura ligera para una rutina cómoda, práctica y constante.</p><div class="tagline"><span class="check">✓</span>Hidratación corporal diaria</div></div></article>
+        <article class="product-card"><div class="product-media"><div class="inner"><img src="assets/piel-seca.jpg" alt="Piel Seca"></div></div><div class="product-body"><h3>Piel Seca</h3><p>Cuidado corporal que ayuda a mantener la suavidad y combatir el resecamiento cotidiano.</p><div class="tagline"><span class="check">✓</span>Hidratación corporal diaria</div></div></article>
+        <article class="product-card"><div class="product-media"><div class="inner"><img src="assets/intensiva.jpg" alt="Intensiva"></div></div><div class="product-body"><h3>Intensiva</h3><p>Una experiencia más envolvente para piel que necesita una sensación extra de nutrición y confort.</p><div class="tagline"><span class="check">✓</span>Hidratación corporal diaria</div></div></article>
+        <article class="product-card"><div class="product-media"><div class="inner"><img src="assets/fps20.jpg" alt="FPS 20"></div></div><div class="product-body"><h3>FPS 20</h3><p>Protección diaria para piel sensible con una presentación clara, funcional y confiable.</p><div class="tagline"><span class="check">✓</span>Protección diaria</div></div></article>
+        <article class="product-card"><div class="product-media"><div class="inner"><img src="assets/fps45.jpg" alt="FPS 45"></div></div><div class="product-body"><h3>FPS 45</h3><p>Gel hidratante protector solar de ultra absorción para una rutina diaria más ligera.</p><div class="tagline"><span class="check">✓</span>Ultra absorción</div></div></article>
+        <article class="product-card"><div class="product-media"><div class="inner"><img src="assets/reparacion-fps35.jpg" alt="Reparación FPS 35"></div></div><div class="product-body"><h3>Reparación Facial y Corporal FPS 35</h3><p>Cuidado intensivo con enfoque en tono, elasticidad y sensación de piel renovada.</p><div class="tagline"><span class="check">✓</span>Cuidado intensivo</div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-zone">
+    <div class="container two-col" style="grid-template-columns:1fr 1fr; align-items:center;">
+      <div>
+        <div class="section-label">Beneficios de marca</div>
+        <h2>Una estética más refinada sin perder claridad, funcionalidad y cercanía.</h2>
+        <div class="benefit-list">
+          <div class="benefit"><div class="icon-round">✦</div><div>Ayuda a mantener la piel hidratada todo el día.</div></div>
+          <div class="benefit"><div class="icon-round">✦</div><div>Mejora la sensación de suavidad.</div></div>
+          <div class="benefit"><div class="icon-round">✦</div><div>Protege la piel del resecamiento cotidiano.</div></div>
+          <div class="benefit"><div class="icon-round">✦</div><div>Se integra fácilmente a la rutina diaria.</div></div>
+        </div>
+      </div>
+      <div class="feature-cards">
+        <div class="soft-card"><h3>Suavidad visible</h3><p>Mensajes claros y visuales limpios que transmiten cuidado real, no promesas exageradas.</p></div>
+        <div class="soft-card"><h3>Confianza de compra</h3><p>Pensada para usuarios pragmáticos que valoran calidad, claridad y recompra.</p></div>
+        <div class="soft-card full"><h3>Dirección editorial sugerida</h3><p>Usa fotos con mármol claro, toallas neutras, manos aplicando crema, macro shots de textura y empaques bien iluminados en tonos oat cream, warm taupe, dusty lavender y soft teal.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="respaldo">
+    <div class="container dark-panel">
+      <div class="dark-grid">
+        <div>
+          <div class="section-label" style="color:#d4ccc3;">Respaldo del laboratorio</div>
+          <h2>La credibilidad también forma parte de la experiencia premium.</h2>
+          <p>Lubriskin está respaldada por nuestro laboratorio, con licencia sanitaria ante COFEPRIS y procesos bajo ISO 9001. Esto fortalece la percepción de una marca seria, consistente y confiable para el cuidado corporal diario.</p>
+        </div>
+        <div>
+          <div class="dark-card"><small>Cumplimiento</small><h3 style="margin-top:8px;">Licencia sanitaria ante COFEPRIS</h3></div>
+          <div class="dark-card" style="margin-top:14px;"><small>Gestión de calidad</small><h3 style="margin-top:8px;">Procesos bajo ISO 9001</h3></div>
+          <div class="dark-card" style="margin-top:14px;"><small>Percepción de marca</small><h3 style="margin-top:8px;">Experta, cercana y confiable</h3></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="background:rgba(255,255,255,.74);">
+    <div class="container cta-grid">
+      <div>
+        <div class="section-label">Cierre</div>
+        <h2>Lubriskin: la crema que siempre está en casa, ahora con una presencia digital más elevada.</h2>
+        <p class="section-copy">Esta versión ya está pensada para verse más premium y ahora combina tus fotos reales de producto con imágenes editoriales tomadas del manual, incluyendo textura, aplicación en piel y recursos visuales lifestyle.</p>
+      </div>
+      <div class="panel" style="background:#fff; border:1px solid var(--line); padding:32px; box-shadow:var(--shadow);">
+        <h3 style="font-size:1.8rem;">Siguiente mejora recomendada</h3>
+        <p class="section-copy">Puedo seguirla puliendo con botón de WhatsApp, datos del laboratorio y una sección final para distribuidores o cadenas de autoservicio.</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="#">Solicitar información</a>
+          <a class="btn btn-light" href="#productos">Ver catálogo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">Lubriskin · Cuidado corporal diario</div>
+  </footer>
+</body>
+</html>
